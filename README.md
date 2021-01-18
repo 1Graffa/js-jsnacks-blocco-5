@@ -1,1 +1,1 @@
-js-jsnacks-blocco-5
+js-jq-carousel
