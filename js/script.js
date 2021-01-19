@@ -1,6 +1,6 @@
 //Creare un array di oggetti: Ogni oggetto descriverà una bici da corsa con le seguenti proprietà: nome e peso. Stampare a schermo la bici con peso minore
 
-// NON mi da
+// var pesi = [];
 // var bici = [
 //   {
 //   nome : "bici rossa",
@@ -12,8 +12,11 @@
 //   }
 //   ];
 // for(i = 0; i < bici.length; i++){
-// console.log(Math.min(bici[i].peso));
+// pesi.push(parseInt(bici[i].peso));
+//
 // }
+// console.log(pesi);
+// console.log(Math.min(...pesi));
 
 //Creare un array di oggetti di squadre di calcio. Ogni squadra avrà diverse proprietà: nome, punti fatti, falli subiti.
 //Nome sarà l’unica proprietà da compilare, le altre saranno tutte settate a 0.
@@ -130,4 +133,48 @@ var pugili = [
     totaleKg += pugili[i].kg;
     }
     console.log(pugili);
-    console.log(totaleKg);
+    console.log("peso totale di tutti i pugili: " + totaleKg);
+
+//*******************************************
+
+//Jsnack3 - Creare  un array che contiene 10 oggetti che rappresentano una zucchina.
+//Dividi in due array separati le zucchine che misurano meno o più di 15cm. Infine stampa separatamente quanto pesano i due gruppi di zucchine.
+var pesiMassimi = [];
+var pesiMedi = [];
+var totaleMax = 0;
+var totaleMed = 0;
+for (var i=0; i < pugili.length ; i++){
+if (pugili[i].cm > 179) {
+  pesiMassimi.push({nome : pugili[i].nome, kg : pugili[i].kg});
+  // totaleMax += pugili[i].kg;
+} else {
+  pesiMedi.push({nome : pugili[i].nome, kg : pugili[i].kg});
+  // totaleMed += pugili[i].kg;
+}
+}
+console.log(pesiMedi);
+console.log(pesiMassimi);
+
+
+// richiamo funzione
+ totaleMax = sommaKili(totaleMax, pesiMassimi);
+ totaleMed = sommaKili(totaleMed, pesiMedi);
+
+  // for (var i=0; i < pesiMassimi.length ; i++){
+  //
+  // }
+  // for (var i=0; i < pesiMedi.length ; i++){
+  //
+  // }
+
+  console.log("peso totale dei massimi: " + totaleMax);
+  console.log("peso totale dei medi: " + totaleMed);
+
+// FUNZIONE PER SOMMARE I KG
+function sommaKili(tot, kili){
+  var tot = 0;
+  for (var i=0; i < kili.length ; i++){
+  tot += kili[i].kg;
+  }
+  return tot;
+  }
